@@ -47,9 +47,10 @@ public class MainActivity extends AppCompatActivity {
                 .build();*/
 
         //component.injectRetrofit(this);
-        ((MyApplication) getApplication()).getComponentInstance();
-        apiService = retrofit.create(ApiService.class);
+         ((MyApplication) getApplication()).getComponentInstance().injectRetrofit(this);
 
+
+        apiService = retrofit.create(ApiService.class);
 
     }
 
